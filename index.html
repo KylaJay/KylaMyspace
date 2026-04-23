@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PrettybrownPrincess.x0x0</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Urbanist:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <audio class="autoplay-audio" autoplay loop controls>
+      <source src="audio.mov" type="video/quicktime" />
+    </audio>
+
+    <div class="falling-words" aria-hidden="true"></div>
+    <img class="sparkle sticker-one" src="Randomgif.jpeg" alt="Decorative glitter graphic" />
+    <img class="sparkle sticker-two" src="randomgif2.jpeg" alt="Decorative glitter graphic" />
+
+    <div class="page-shell">
+      <header class="top-banner">
+        <p class="mini-tag">ONLINE NOW!!!</p>
+        <h1>PrettybrownPrincess.x0x0</h1>
+        <p class="subhead">Pink, glossy, and a little dangerous in Jacksonville, FL</p>
+      </header>
+
+      <main class="profile-layout">
+        <aside class="left-column">
+          <section class="panel profile-card">
+            <div class="panel-title">My Profile</div>
+            <div class="profile-photo">
+              <img
+                class="profile-image"
+                src="images/ProfilePicture.JPG"
+                alt="Tech Barbiie profile picture"
+              />
+            </div>
+            <h2>Tech_Barbiie&lt;3</h2>
+            <ul class="profile-facts">
+              <li><strong>Status:</strong> Single</li>
+              <li><strong>Zodiac:</strong> Leo</li>
+              <li><strong>Hometown:</strong> Jacksonville, FL</li>
+              <li><strong>Mood:</strong> Pretty in pink</li>
+            </ul>
+          </section>
+
+          <section class="panel contact-card">
+            <div class="panel-title">Contacting Tech_Barbiie&lt;3</div>
+            <div class="contact-grid">
+              <div>Add to Friends</div>
+              <div>Send Message</div>
+              <div>Instant Message</div>
+              <div>Add to Favorites</div>
+            </div>
+          </section>
+
+          <section class="panel music-card">
+            <div class="panel-title">Music Mood</div>
+            <p><strong>Currently Listening To:</strong></p>
+            <p class="listening-track">"Love Affair" - Lil Twist, Lil Wayne</p>
+            <p class="tiny-note">Autoplaying: "Like You" - Tracey + BUFFIDOPETERA</p>
+          </section>
+        </aside>
+
+        <section class="right-column">
+          <section class="panel status-card">
+            <div class="panel-title">Status</div>
+            <p class="status-text">My personality is anything pink</p>
+          </section>
+
+          <section class="panel about-card">
+            <div class="panel-title">About Me</div>
+            <p>
+              If it sparkles, smells good, or matches my gloss, I probably love it.
+              I am all about good music, pretty energy, shopping days, and showing
+              up cute every time.
+            </p>
+          </section>
+
+          <section class="panel interests-card">
+            <div class="panel-title">Interests</div>
+            <div class="interest-row">
+              <span class="interest-label">General</span>
+              <span class="interest-value">Shopping, listening to music, weightlifting</span>
+            </div>
+            <div class="interest-row">
+              <span class="interest-label">Favorite Artists</span>
+              <span class="interest-value">Beyonce, Latto, Summer Walker, JT</span>
+            </div>
+            <div class="interest-row">
+              <span class="interest-label">Energy</span>
+              <span class="interest-value">Sweet, flirty, pink, playful, a little dramatic</span>
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      const wordPool = [
+        "Barbiie",
+        "Pink",
+        "Pretty",
+        "Glossy",
+        "Leo",
+        "Tech",
+        "Flirty",
+        "Princess"
+      ];
+
+      const fallingWords = document.querySelector(".falling-words");
+
+      function makeWord() {
+        const word = document.createElement("span");
+        word.className = "falling-word";
+        word.textContent = wordPool[Math.floor(Math.random() * wordPool.length)];
+        word.style.left = `${Math.random() * 100}%`;
+        word.style.animationDuration = `${5 + Math.random() * 4}s`;
+        word.style.animationDelay = `${Math.random() * 1.5}s`;
+        word.style.fontSize = `${0.9 + Math.random() * 1.1}rem`;
+        fallingWords.appendChild(word);
+
+        setTimeout(() => {
+          word.remove();
+        }, 9500);
+      }
+
+      for (let i = 0; i < 14; i += 1) {
+        setTimeout(makeWord, i * 420);
+      }
+
+      setInterval(makeWord, 900);
+    </script>
+  </body>
+</html>
